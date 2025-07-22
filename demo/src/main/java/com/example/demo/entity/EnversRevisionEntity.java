@@ -12,7 +12,7 @@ import org.hibernate.envers.RevisionTimestamp;
 
 @Data
 @Entity(name = "revinfo")
-//@RevisionEntity
+@RevisionEntity
 //@RevisionEntity(EnversRevisionListener.class)
 //@FieldNameConstants(innerTypeName = "EnversRevisionFieldNames", asEnum = true)
 
@@ -20,14 +20,14 @@ public class EnversRevisionEntity {
 
     @RevisionNumber
     @Id
-   // @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "revinfo_seq")
-    @SequenceGenerator(name = "revinfo_seq", sequenceName = "revinfo_rev_seq")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+   // @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "revinfo_seq")
+   // @SequenceGenerator(name = "revinfo_seq", sequenceName = "revinfo_seq")
     private int rev;
 
     @RevisionTimestamp
     private Date revtstmp;
 
-    private String url;
+
 
 }

@@ -22,9 +22,9 @@ import java.util.Date;
 public class TariffEntity {
 
         @Id
-        //@GeneratedValue(strategy = GenerationType.IDENTITY)
-        @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "revinfo_seq")
-        @SequenceGenerator(name = "revinfo_seq", sequenceName = "tariff_id_seq")
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        /*@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "revinfo_seq")
+        @SequenceGenerator(name = "revinfo_seq", sequenceName = "tariff_id_seq") */
         @Column(unique = true, nullable = false)
         private Integer id;
         private String name;
