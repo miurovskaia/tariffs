@@ -2,6 +2,8 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 
+import java.time.Instant;
+import java.time.LocalDateTime;
 import java.util.Date;
 import lombok.Data;
 import lombok.ToString;
@@ -26,8 +28,15 @@ public class EnversRevisionEntity {
     private int rev;
 
     @RevisionTimestamp
-    private Date revtstmp;
+    private Instant timestamp;
 
+    public Instant getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(Instant timestamp) {
+        this.timestamp = timestamp;
+    }
 
 
 }

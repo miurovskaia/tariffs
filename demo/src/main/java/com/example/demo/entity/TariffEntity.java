@@ -28,18 +28,18 @@ public class TariffEntity {
         @Column(unique = true, nullable = false)
         private Integer id;
         private String name;
-        private String type;
         private String conditions;
         @Version
+        @Column(name = "version")
+        @Audited
         private int version;
 
         public TariffEntity() {
         }
 
-        public TariffEntity(Integer id, String name, String type, String conditions) {
+        public TariffEntity(Integer id, String name,String conditions) {
                 this.id = id;
                 this.name = name;
-                this.type = type;
                 this.conditions = conditions;
 
         }
@@ -50,10 +50,6 @@ public class TariffEntity {
 
         public String getName() {
                 return name;
-        }
-
-        public String getType() {
-                return type;
         }
 
         public String getConditions() {
@@ -68,12 +64,15 @@ public class TariffEntity {
                 this.name = name;
         }
 
-        public void setType(String type) {
-                this.type = type;
-        }
 
         public void setConditions(String conditions) {
                 this.conditions = conditions;
         }
 
+        public Integer getVersion() {
+                return version;
+        }
+        public void setVersion(Integer version) {
+                this.version = version;
+        }
 }

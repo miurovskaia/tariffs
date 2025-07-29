@@ -46,7 +46,6 @@ public class TariffService {
     public void changeTariff(CreateTariffDto createTariffDto, String id) {
         TariffEntity tariffEntity = tariffRepository.findById(id).orElseThrow(() -> new RuntimeException("Tariff not found"));
         tariffEntity.setName(createTariffDto.getName());
-        tariffEntity.setType(createTariffDto.getType());
         tariffEntity.setConditions(createTariffDto.getConditions());
         tariffRepository.save(tariffEntity);
     }
