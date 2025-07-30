@@ -2,6 +2,7 @@ package com.example.demo.service;
 
 import com.example.demo.dto.CreateTariffDto;
 import com.example.demo.entity.TariffEntity;
+import com.example.demo.kafka.KafkaSender;
 import com.example.demo.repository.TariffRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -39,8 +40,10 @@ public class TariffService {
         return tariffEntitySet;
     }
 
-    public Integer createTariff(TariffEntity tariffEntity) {
-        return (tariffRepository.save(tariffEntity)).getId();
+    public Integer createTariff(TariffEntity tariffEntity) throws Exception {
+        Integer id = (tariffRepository.save(tariffEntity)).getId();
+        KafkaSender.sendMessageSync("create", "create");
+        return id;
     }
 
     public void changeTariff(CreateTariffDto createTariffDto, String id) {
