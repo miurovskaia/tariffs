@@ -29,7 +29,7 @@ public class KafkaSender
         return new KafkaProducer<>(props);
     }
 
-    public static void sendMessageSync(final String key, final String message) throws Exception {
+    public static void sendMessage(final String key, final String message) throws Exception {
         final Producer<String, String> producer = createProducer();
         long time = System.currentTimeMillis();
 

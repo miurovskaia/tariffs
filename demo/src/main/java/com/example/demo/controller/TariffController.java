@@ -54,7 +54,7 @@ public class TariffController {
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteTariff(@PathVariable("id") String id) {
+    public ResponseEntity<?> deleteTariff(@PathVariable("id") String id) throws Exception {
         tariffService.deleteTariff(id);
         return ResponseEntity.ok().build();
     }

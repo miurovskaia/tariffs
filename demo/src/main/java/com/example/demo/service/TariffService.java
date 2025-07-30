@@ -42,7 +42,7 @@ public class TariffService {
 
     public Integer createTariff(TariffEntity tariffEntity) throws Exception {
         Integer id = (tariffRepository.save(tariffEntity)).getId();
-        KafkaSender.sendMessageSync("create", "create");
+        KafkaSender.sendMessage(id.toString(), "created");
         return id;
     }
 
@@ -53,8 +53,9 @@ public class TariffService {
         tariffRepository.save(tariffEntity);
     }
 
-    public void deleteTariff(String id) {
+    public void deleteTariff(String id) throws Exception {
         tariffRepository.deleteById(id);
+        KafkaSender.sendMessage(id.toString(), "deleted");
     }
 
 
