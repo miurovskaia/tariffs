@@ -15,11 +15,6 @@ public class KafkaSender
 
     private static final Logger logger = LoggerFactory.getLogger("App");
 
- /////////
-    //    sendMessageSync("car-J634XO", json2);
-  ///////////////
-
-
     private static Producer<String, String> createProducer() {
         Properties props = new Properties();
         props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, BOOTSTRAP_SERVERS);

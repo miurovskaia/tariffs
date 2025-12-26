@@ -12,7 +12,6 @@ import java.util.Date;
 
 public class TariffDto {
 
-
     private Integer id;
     private String name;
     private String type;

@@ -14,7 +14,6 @@ import java.util.List;
 import java.util.Set;
 
 @Service
-//@RequiredArgsConstructor
 public class TariffService {
     private final TariffRepository tariffRepository;
 
@@ -57,6 +56,5 @@ public class TariffService {
         tariffRepository.deleteById(id);
         KafkaSender.sendMessage(id.toString(), "deleted");
     }
-
 
 }

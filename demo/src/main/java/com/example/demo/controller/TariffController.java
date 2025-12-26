@@ -59,22 +59,4 @@ public class TariffController {
         return ResponseEntity.ok().build();
     }
 
-
-//edit
-    /*
-    @GetMapping("/search")
-    public ResponseEntity<?> getClientBySearch(@RequestHeader(value = "SearchString", required = true) String searchString) throws Exception {
-        if (searchString.isEmpty()) {
-            throw new BadRequestException("search word should not be empty");
-        }
-        Set<ClientEntity> clientEntitySet = clientService.searchByString(searchString);
-        Set<ClientDto> clientDtoSet = new HashSet<>();
-        for(ClientEntity client: clientEntitySet )
-        {
-            clientDtoSet.add(clientMapper.clientEntityToClientDto(client));
-        }
-        return new ResponseEntity(clientDtoSet, HttpStatus.OK);
-    }
-
-     */
 }

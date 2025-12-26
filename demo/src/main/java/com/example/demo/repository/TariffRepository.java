@@ -13,7 +13,6 @@ public interface TariffRepository extends JpaRepository<TariffEntity, String> {
         Optional<TariffEntity> findById(Integer id);
         Set<TariffEntity> findAllByNameIn(List<String> searchWords);
 
-
     }
 
 

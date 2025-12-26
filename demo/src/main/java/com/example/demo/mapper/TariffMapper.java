@@ -9,14 +9,7 @@ import org.mapstruct.Mapper;
 @Mapper(componentModel = "spring")
 public interface TariffMapper {
 
-
     TariffDto tariffEntityToTariffDto(TariffEntity tariffEntity);
-/*
-    @Mappings({
-            @Mapping(target = "bankid", source = "bankid"),
-            @Mapping(target = "surname", source = "surname"),
-    })
 
- */
     TariffEntity createTariffDtoToTariffEntity(CreateTariffDto createTariffDto);
 }

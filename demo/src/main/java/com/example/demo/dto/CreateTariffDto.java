@@ -16,7 +16,6 @@ public class CreateTariffDto {
 
 
     public CreateTariffDto(String name, String type, String conditions) {
-
         this.name = name;
         this.type = type;
         this.conditions = conditions;
